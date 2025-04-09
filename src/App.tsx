@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import DetailingPage from './pages/DetailingPage';
@@ -42,7 +42,9 @@ const App: React.FC = () => {
 
   // Show full content when everything is ready
   return (
-    <Router>
+    <BrowserRouter basename="/spabs">
+
+    <Routes>
       <div className="min-h-screen bg-gray-50" style={{ overflowX: 'hidden' }}>
         <Navbar />
         <Routes>
@@ -54,7 +56,11 @@ const App: React.FC = () => {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </Routes>
+
+    </BrowserRouter>
+
+
   );
 };
 
